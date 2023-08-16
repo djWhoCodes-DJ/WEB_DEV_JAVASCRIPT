@@ -9,9 +9,9 @@
 - `Livescript` was renamed to `JavaScript`
 - At that point, `Internet Explorer` (web browser) copied Javascript and created it's own language `JScript`
 - Because of 2 different languages, websites sometimes, would not open on another browser. So to Standardise, Javascript was taken to ECMA.
-- ECMA created `ECMAScript`, which had standards, which a new web scripting language should follow to be implemented in a browser.  
-  
-  
+- ECMA created `ECMAScript`, which had standards, which a new web scripting language should follow to be implemented in a browser.
+
+
 `ES5` : ES2009 (Lots of new features in javascript)  
 `ES6` : ES2015 (Biggest Update / Modern Javascript)  
 `ES7` : ES2016  
