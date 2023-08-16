@@ -12,12 +12,12 @@
 - ECMA created `ECMAScript`, which had standards, which a new web scripting language should follow to be implemented in a browser.
 
 
-`ES5` : ES2009 (Lots of new features in javascript)  
-`ES6` : ES2015 (Biggest Update / Modern Javascript)  
-`ES7` : ES2016  
+- `ES5` : ES2009 (Lots of new features in javascript)  
+- `ES6` : ES2015 (Biggest Update / Modern Javascript)  
+- `ES7` : ES2016  
   
 
-### JAVASCRIPT is Backward Compatible
+#### JAVASCRIPT is Backward Compatible
 It means that, Old features will still work in new versions of JS.  
 `But not Forward Compatible` : Means, A feature launched today, will not work in a old browser that has not been updated since ages.
 
