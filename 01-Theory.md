@@ -16,6 +16,7 @@
 - `ES6` : ES2015 (Biggest Update / Modern Javascript)  
 - `ES7` : ES2016  
   
+---
 
 #### JAVASCRIPT is Backward Compatible
 It means that, Old features will still work in new versions of JS.  
