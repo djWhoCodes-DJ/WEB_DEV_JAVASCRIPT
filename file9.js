@@ -8,6 +8,10 @@
 // 8. Default parameters 
 // 9. rest parameter
 // 10. Parameter destructuring 
+// 11. Higher order function 
+//       - callback functions
+//       - function returning function
+
 
 
 // __________________________________________________
@@ -192,3 +196,45 @@ console.log(addAll(3,3,4,5,6));
 
 
 // __________________________________________________
+//Parameter Destructuring
+const dbz = {
+    Name : "Goku",
+    Sport : "Fight"
+}
+
+function printObj({Name, Sport}){
+    // console.log(Fname); // error: varName should be same as in Object
+    console.log(Sport);
+    console.log(Name);
+}
+
+printObj(dbz);
+
+
+// __________________________________________________
+// callback functions : means function passes as an argument
+
+function fun1(callback){  //There is a convention to name parameter "a" as "callback"
+    console.log(callback);
+    callback("Devanshu");
+}
+
+function fun2(Name){
+    console.log("Fun2", Name);
+}
+
+fun1(fun2);
+
+
+// __________________________________________________
+// function returning function
+function fun100(){
+    function fun300(){
+        console.log("Hello");
+    }
+    return fun300;
+}
+
+const ans = fun100();
+console.log(ans);
+ans();
