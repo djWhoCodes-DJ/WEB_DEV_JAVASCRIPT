@@ -26,3 +26,8 @@ It means that, Old features will still work in new versions of JS.
 ---
 
 
+### Basics
+- `let` created variable is undeclared outside it's block. But `var` created variable is accessible outside block.
+
+- `push & pop` are faster than `shift & unshift`. 
+
