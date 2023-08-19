@@ -4,6 +4,8 @@
 // 4. proto, prototype, class
 // 5. A good practice to create, multiple objects using same properties and methods
 // 6. proto and prototype mixed practice
+// 7. new keyword
+// 8. class 
 
 
 
@@ -210,3 +212,74 @@ console.log(studentNew1);
 console.log(studentNew1.displayFull());
 console.log(studentNew2);
 console.log(studentNew2.displayFull());
+
+
+// _______________________________________________________________
+// new keyword
+//    - creates an empty object "this"
+//    - automatically returns "this" object
+//    - "new" keyword makes link between __proto__ and prototype
+//    - Below, example, "createUser.prototype" is the prototype because it is the automatically generated object by function. Also, since "createUser.prototype"  holds all the non-direct functions it is also known as "__proto__".
+
+//constructor function
+function CreateUser(fName, age){
+    this.fName = fName;
+    this.age = age;
+}
+CreateUser.prototype["about"] = function(){
+    console.log(this.fName, this.age);    
+}
+
+const emp1 = new CreateUser("Devanshu Jain", 22);
+console.log(emp1);
+emp1.about();
+
+console.log(CreateUser.__proto__);
+console.log(CreateUser.prototype);
+
+for(let key in emp1){
+    console.log(key);
+}
+
+console.log("")
+for(let key in emp1){
+    if(emp1.hasOwnProperty(key))
+    console.log(key);
+}
+
+
+//Constructor functions
+const arr1 = [1,2,3,4,5];
+console.log(arr1);
+
+
+const arr2 = new Array(6,7,8,9,10);
+console.log(arr2);
+
+//Array creation in 1st(arr1), follows the procedure of 2nd(arr2), that's why we can use methods on writing ".". Because only functions provide prototype
+
+
+
+// _______________________________________________________________
+// class: Everything we did abpve using function and prototype is done using class
+
+class CreateUser1{
+    constructor(fName, lName, age, email){
+        console.log("Constructor called!")
+        this.fName = fName;
+        this.lName = lName;
+        this.age = age;
+        this.email = email;
+    }
+
+    about(){
+        console.log("I am about in class");
+    }
+    displayInfo(){
+        console.log("I am display in class");
+    }
+}
+
+const emp2 = new CreateUser1("Ajay", "Raj", 23, "aj@email");
+// console.log(emp2);
+console.log(Object.getPrototypeOf(emp2));
