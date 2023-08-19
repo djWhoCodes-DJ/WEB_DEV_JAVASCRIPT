@@ -3,6 +3,7 @@
 // 3. Object creation using Object.create()
 // 4. proto, prototype, class
 // 5. A good practice to create, multiple objects using same properties and methods
+// 6. proto and prototype mixed practice
 
 
 
@@ -145,3 +146,67 @@ console.log(student1);
 console.log(student1.displayFullName());
 console.log(student2);
 console.log(student2.displayFullName());
+
+
+
+// _______________________________________________________________
+// prototype
+//    - prototype is an object, provided inside the functions
+//    - only functions provide prototype
+//    -   
+
+function hello(){
+    return "hello world";
+}
+
+// hello.prototype = {}
+hello.prototype["key1"] = "Value1";
+hello.prototype["key2"] = "Value2";
+hello.prototype["key3"] = "Value3";
+hello.prototype["sing"] = function(){
+    return "I can sing!";
+}
+
+console.log(hello);
+console.log(hello.prototype.sing());
+
+
+// _______________________________________________________________
+// proto and prototype mixed practice
+
+// const displayInfoNew = {
+//     is50(){
+//         return "Above 50";
+//     },
+
+//     displayFullName(){
+//         return this.fName +" "+ this.lName;
+//     }
+// }
+
+function userDetailsNew(fName, lName, email, age){
+    const user = Object.create(userDetailsNew.prototype);  
+    user["fName"] = fName;
+    user["lName"] = lName;
+    user["email"] = email;
+    user["age"] = age;
+    return user;
+}
+
+userDetailsNew.prototype["is50"] = function is50(){
+    return "Above 50";
+}
+
+userDetailsNew.prototype["displayFull"] = function displayFullName(){
+    return this.fName + " " + this.lName;
+}
+
+const studentNew1 = userDetailsNew("Jethalal", "Gada", "jg@gmail", "50");
+const studentNew2 = userDetailsNew("Taarak", "Mehta", "tm@gmail", "54");
+const studentNew3 = userDetailsNew("Roshan", "Sodhi", "rs@gmail", "45");
+const studentNew4 = userDetailsNew("Hansraj", "Hathi", "hh@gmail", "57");
+
+console.log(studentNew1);
+console.log(studentNew1.displayFull());
+console.log(studentNew2);
+console.log(studentNew2.displayFull());
