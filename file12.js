@@ -6,6 +6,11 @@
 // 6. proto and prototype mixed practice
 // 7. new keyword
 // 8. class 
+// 9. Inheritance
+// 10. super
+// 11. getters and setters
+// 12. static methods and properties
+
 
 
 
@@ -283,3 +288,77 @@ class CreateUser1{
 const emp2 = new CreateUser1("Ajay", "Raj", 23, "aj@email");
 // console.log(emp2);
 console.log(Object.getPrototypeOf(emp2));
+
+
+
+// _______________________________________________________________
+// Inheritance
+// Object is also known as Instance
+
+class Animal{
+
+}
+
+class Dog extends Animal{
+
+}
+
+const tommy = new Dog();
+
+
+
+// _______________________________________________________________
+// super
+
+class Human{
+    constructor(name, age){
+
+    }
+}
+
+class student extends Human{
+    constructor(name, age, rollNo){
+        super(name, age);  //These will be initialised in Human Constructor
+        this.rollNo = rollNo
+    }
+}
+
+const s1 = new student("Devanshu", 22, 31);
+
+// _______________________________________________________________
+
+// const obj300 = {
+//     "funName" : function(){}  === funName(){}
+// }
+
+// getters and setters
+
+//getter: to make a function act as a property
+class kingdom{
+    constructor(fName, lName, age){
+        this.fName = fName;
+        this.lName = lName;
+    }
+
+    get displayDetails(){
+        return this.fName + " " + this.lName;
+    }
+}
+
+const bheem = new kingdom("chota", "bheem", 16);
+console.log(bheem.displayDetails)
+
+
+
+// _______________________________________________________________
+// static methods and properties
+class School{
+    static principal(){
+        console.log("Eat your greens!");
+    }
+
+    static desc = "static proeprty";
+}
+
+School.principal();  //No need to create object
+console.log(School.desc);
