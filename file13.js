@@ -1,5 +1,6 @@
 // 1. How Javascript works
-//  
+// 2. Hoisting
+// 3. Closure
 
 
 
@@ -41,3 +42,37 @@
 
 
 
+// ________________________________________________________
+// Closure
+//  -> Function returning a function
+//  -> When a fun1 returns a fun2(created inside fun1), then fun2 will have memory of all the variables and functions of parent function fun1.
+
+// Example 1
+function hello(x){
+    const a = "z";
+    const b = "y";
+    return function(){
+        console.log(a,b,x);
+    }
+}
+
+const fun1 = hello("arg");
+fun1();
+
+
+// Example 2
+function powerOf(pow){
+    return function(base){
+        console.log(base**pow);
+    }
+}
+
+const cube = powerOf(3);
+cube(2);
+cube(4);
+cube(5);
+
+const square = powerOf(2);
+square(2);
+square(4);
+square(5);
